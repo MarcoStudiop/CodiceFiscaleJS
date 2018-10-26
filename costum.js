@@ -1,5 +1,9 @@
-function ShowInput() {
 
+//START PROGRAMMA
+function ShowInput() {
+  
+  
+ ///####################INSERIMENTO DINAMICO DALLA FORM##############################///
   var nome = document.getElementById("frmNameA").value;
   var cognome = document.getElementById("frmNameB").value;
   var localita = document.getElementById("loc").value;
@@ -172,50 +176,7 @@ function ShowInput() {
 
 
   //##############################PARTE MESE & GIORNO###################################MARTY--PART###//
-
-  //var mese = document.getElementById("").textContent;
-  //var giorno = document.getElementById("").textContent;
-  //var femmina = document.getElementById("");
-
-  /*switch (mese) {
-    case 'Gennaio':
-      mese = cod_mese[0];
-      break;
-    case 'Febbraio':
-      mese = cod_mese[1];
-      break;
-    case 'Marzo':
-      mese = cod_mese[2];
-      break;
-    case 'Aprile':
-      mese = cod_mese[3];
-      break;
-    case 'Maggio':
-      mese = cod_mese[4];
-      break;
-    case 'Giugno':
-      mese = cod_mese[5];
-      break;
-    case 'Luglio':
-      mese = cod_mese[6];
-      break;
-    case 'Agosto':
-      mese = cod_mese[7];
-      break;
-    case 'Settembre':
-      mese = cod_mese[8];
-      break;
-    case 'Ottobre':
-      mese = cod_mese[9];
-      break;
-    case 'Novembre':
-      mese = cod_mese[10];
-      break;
-    case 'Dicembre':
-      mese = cod_mese[11];
-      break;
-  }*/
-
+    
   switch (mese) {
     case 01:
       mese = cod_mese[0];
@@ -254,7 +215,7 @@ function ShowInput() {
       mese = cod_mese[11];
       break;
   }
-
+ //# CASE DEI GIORNI 
   switch (giorno) {
     case 01: case 02 : case 03 : case 04 : case 05:
     case 06: case 07 : case 08 : case 09 : case 10:
@@ -262,19 +223,21 @@ function ShowInput() {
     case 16: case 17 : case 18 : case 19 : case 20:
     case 21: case 22 : case 23 : case 24 : case 25:
     case 26: case 27 : case 28 : case 29 : case 30: case 31 :
-    if (femmina.checked) {
+    //SE HAI SELEZIONATO FEMMINA(RADIOBUTTON)
+      if (femmina.checked) {
       giorno += 40;
-    }
+    } // ALTRIMENTI MASCHIO
     else if(maschio.checked){
       giorno = giorno;
     }
 
       break;
-  }
+  
+  }//#FINE SWITCH
 
 
 
-
+//#VERSIONE STATICA
   /*if (femmina) {
     giorno += 40;
   
@@ -282,7 +245,9 @@ function ShowInput() {
   else {
     giorno = giorno;
   }*/
-  //##############################CODICE CITTA'#####################################//
+  
+  
+  //##############################CODICI CITTA'#####################################//
   var cod_citta = ["A001",
     "A004",
     "A005",
@@ -16530,7 +16495,7 @@ function ShowInput() {
 
 
   //##############################PULISCE IL CODICE FISCALE#######################VEDI FUNZIONE GetCF()###########//
-  var CF_FX = GetCF(CF);
+  var CF_FX = GetCF(CF); // TOGLIE LE VIRGOLE SEPARANO LE CONSONANTI DEI NOMI E COGNOMI
 
 
   //##############################CODICE CONTROLLO###########################################//
@@ -16538,10 +16503,10 @@ function ShowInput() {
   var alpha_pari = [];
 
   //#OPERAZIONI
-  var somma_dispari = 0;
-  var somma_pari = 0;
-  var somma_controllo = 0;
-  var carattere_controllo;
+  var somma_dispari = 0; // INIZIALIZZA SOMMA DISPARI 
+  var somma_pari = 0;  // INIZIALIZZA SOMMA PARI
+  var somma_controllo = 0; // INIZIALIZZA SOMMA CONTROLLO
+  //#CARATTERE FINALE
   var lettera_controllo;
 
 
@@ -16677,8 +16642,10 @@ function ShowInput() {
 
 
   }
+  //#SOMMA FINALE
   somma_controllo = (somma_dispari + somma_pari) % 26;
 
+  //#ARRAY DELLE LETTERE CHE SI ASSOCIERANNO AL RISULTATO DELLA SOMMA CONTROLLO
   var caratteri_lista = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
   for (var i = 0; i <= 26; i++) {
     switch (somma_controllo) {
