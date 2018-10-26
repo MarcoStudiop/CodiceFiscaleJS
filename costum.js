@@ -8,8 +8,8 @@ function ShowInput() {
   var cognome = document.getElementById("frmNameB").value;
   var localita = document.getElementById("loc").value;
   //APPUNTI
-  //REGEX UTILE cod_città: /\"[A-Z0-9]\d\d\d\"\,/gm
-  //REGEX UTILE  nomi_città /\"(.*?)\",/gm
+  //REGEX UTILE cod_città: /\"[A-Z0-9]\d\d\d\"\,/gm    ---- SELEZIONA 4 CARATTERI ALFANUMERICI CON 3 CIFRE E DENTRO ALLE VIRGOLETTE
+  //REGEX UTILE  nomi_città /\"(.*?)\",/gm  -----  SELEZIONA TUTTI I CARATTERI DOPO LE PRIME VIRGOLETTE  E TERMINA DOVE C'è LA VIRGOLA
 
   ///####################COGNOME&NOMI##############################///
   // DATI 
