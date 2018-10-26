@@ -67,12 +67,12 @@ function ShowInput() {
     //#2 STEP : DISTINZIONE TRA VOCALI E CONSONANTI
     //##############################VOCALI&CONSONANTI##############################//
     for (var i = 0; i <= nome.length; i++) {
-      if (nome.charAt(i).match(/[aeiouAEIOU]/)) {
+      if (nome.charAt(i).match(/[aeiouAEIOU]/)) { //REGEX CHE  TROVA VOCALI SCRITTE IN MAIUSCOLO O IN MINUSCOLO
         // prendo le vocali
         vocali_nome[i] = nome.charAt(i).toUpperCase();
         vocali = vocali_nome.filter(Boolean);
 
-      } else if (nome.charAt(i).match(/[/',/"]/)) {
+      } else if (nome.charAt(i).match(/[/',/"]/)) { // REGEX CHE TOGLIE VIRGOLE E APOSTROFI
         continue;
       }
       else {
